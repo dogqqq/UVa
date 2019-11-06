@@ -4,7 +4,7 @@ using namespace std;
 
 #define PROBLEM "UVa686"
 #define USE_CPPIO() ios_base::sync_with_stdio(0); cin.tie(0)
-#define N 50000
+#define N 35000
 
 bool p[N];
 
@@ -12,9 +12,9 @@ void make_p(){
 	for (int i = 0; i < N; ++i)
 		p[i] = true;
 	p[0] = p[1] = false; 
-	for (int i = 2; i <= sqrt(N); ++i){
+	for (int i = 2; i < N; ++i){
 		if (p[i])
-			for (int j = i*i; j <= N; j+=i)
+			for (int j = i*i; j < N; j+=i)
 				p[j] = false;
 	}
 }
