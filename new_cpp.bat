@@ -1,10 +1,28 @@
 @echo off
 
 cls
-mkdir %1
+mkdir UVa%1
 
-type template > %1\%1.cpp
-echo.>%1\%1.in
-echo.>%1\%1.out
+if ERRORLEVEL 1 (
+	echo.
+	set /p ch=Clear/Keep the origin file?[Y/N]:
+	echo.
+) else (
+	goto create
+)
 
-echo %1 Created
+::Created before
+if /I %ch% == N (
+	echo Commend canceled.
+	goto end
+)
+
+:create
+type template > UVa%1\UVa%1.cpp
+echo.>UVa%1\UVa%1.in
+echo.>UVa%1\UVa%1.out
+
+echo UVa%1 Created
+
+:end
+set ch=
