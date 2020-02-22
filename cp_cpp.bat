@@ -1,14 +1,14 @@
 @echo off
 
-pushd %1
+pushd UVa%1
 
 cls
 echo COMPILING...
-g++ -std=c++11 %1.cpp -o %1.exe -DDBG
+g++ -std=c++11 UVa%1.cpp -o UVa%1.exe -DDBG
 
 echo FINISH
 if %ERRORLEVEL% EQU 0 (
-	%1.exe
+	UVa%1.exe
 )
 
 popd
