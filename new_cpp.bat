@@ -26,3 +26,7 @@ echo UVa%1 Created
 
 :end
 set ch=
+
+start UVa%1\UVa%1.cpp
+start UVa%1\UVa%1.out
+start UVa%1\UVa%1.in
